@@ -28,7 +28,7 @@ use embedded_graphics::{
     prelude::*,
     text::Text,
 };
-use ssd1306::{prelude::*, I2CDisplayInterface, Ssd1306, mode::BufferedGraphicsMode};
+use ssd1306::{mode::BufferedGraphicsMode, prelude::*, I2CDisplayInterface, Ssd1306};
 
 // Standard library
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -344,7 +344,13 @@ fn main() -> anyhow::Result<()> {
             };
 
             // Update the display with current status
-            update_display(&mut display, text_style, &ip_info, status_text, current_counter)?;
+            update_display(
+                &mut display,
+                text_style,
+                &ip_info,
+                status_text,
+                current_counter,
+            )?;
 
             last_counter = current_counter;
             last_dnd = current_dnd;
@@ -360,7 +366,11 @@ fn main() -> anyhow::Result<()> {
 
 // Helper function to update the display
 fn update_display(
-    display: &mut Ssd1306<I2CInterface<i2c::I2cDriver<'_>>, DisplaySize128x32, BufferedGraphicsMode<DisplaySize128x32>>,
+    display: &mut Ssd1306<
+        I2CInterface<i2c::I2cDriver<'_>>,
+        DisplaySize128x32,
+        BufferedGraphicsMode<DisplaySize128x32>,
+    >,
     text_style: MonoTextStyle<BinaryColor>,
     ip_info: &embedded_svc::ipv4::IpInfo,
     status: &str,
@@ -397,7 +407,7 @@ fn update_display(
     .unwrap();
 
     display.flush().unwrap();
-    
+
     Ok(())
 }
 
