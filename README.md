@@ -67,7 +67,6 @@ Connect the SSD1306 OLED display to the ESP32:
 ## Project Structure
 
 - `src/main.rs` - Main application code
-- `src/http_server_page.html` - HTML template for the web interface
 - `build.rs` - Build script for embedding environment variables
 - `Cargo.toml` - Project dependencies and configuration
 
