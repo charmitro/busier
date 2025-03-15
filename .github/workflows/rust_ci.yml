@@ -12,6 +12,8 @@ on:
 env:
   CARGO_TERM_COLOR: always
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  WIFI_SSID: dummy_ssid
+  WIFI_PASS: dummy_password
 
 jobs:
   rust-checks:
