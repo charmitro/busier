@@ -1,0 +1,27 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+
+# ESP32 build artifacts
+/.embuild/
+
+# IDE/Editor specific files
+/.vscode/
+/.idea/
+*.rs.bk
+*.swp
+*~
+
+# Environment files that might contain secrets
+.env
+.envrc
+*.env
+
+# macOS specific files
+.DS_Store
+
+# Log files
+*.log
+
+# Build outputs
+/dist/
