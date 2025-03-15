@@ -2,8 +2,6 @@
 
 A Rust application for ESP32 microcontrollers that creates a web interface for controlling your availability status, with real-time display on an SSD1306 OLED screen.
 
-![Busier - ESP32 Status Display](https://via.placeholder.com/600x400?text=Busier+ESP32+Status+Display)
-
 ## Features
 
 - 🌐 WiFi connectivity to your local network
